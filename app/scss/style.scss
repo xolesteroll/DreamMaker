@@ -21,48 +21,89 @@
         margin-left: auto;
         li {
             display: inline-block;
-            & + li{
+            & + li {
                 margin-left: 58px;
             }
             a {
                 font-weight: 500;
                 font-size: 18px;
                 line-height: 27px;
-                font-family: 'Poppins', sans-serif;
+                font-family: "Poppins", sans-serif;
                 color: #717784;
             }
         }
     }
-    &__btn{
+    &__btn {
         margin-left: 58px;
     }
 }
 .main {
-    position: absolute;
-    right: 0;
-    left: 0;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-    &__inner{
+    &__inner {
         max-width: 750px;
-        color: #696A86;
+        color: #696a86;
         position: absolute;
         bottom: 150px;
         left: 404px;
     }
-    &__title{
+    &__title {
         font-size: 56px;
         line-height: 100%;
         font-weight: 700;
         letter-spacing: -1px;
         max-width: 548px;
     }
-    &__text{
+    &__text {
         font-size: 18px;
         line-height: 27px;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
+    }
+}
+.provide {
+    color: $text;
+    text-align: center;
+    padding: 100px 0;
+    &__title {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 39px;
+    }
+    &__text {
+        max-width: 745px;
+        font-size: 18px;
+        line-height: 40px;
+        font-weight: 400;
+        margin: 0 auto;
+        margin-bottom: 140px;
+    }
+    &__items {
+        display: flex;
+    }
+    &__item {
+        padding: 22px 20px;
+        cursor: pointer;
+        transition: all 0.5s;
+        border-radius: 10px;
+        max-width: 25%;
+        border: 1px solid transparent;
+        border-bottom: 7px solid transparent;
+        &-img {
+            margin-bottom: 20px;
+        }
+        &-title {
+            margin-bottom: 12px;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 40px;
+        }
+        &-text {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 400;
+        }
     }
 }
 
