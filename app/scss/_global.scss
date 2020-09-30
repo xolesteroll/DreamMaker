@@ -13,6 +13,7 @@ body {
     font-weight: 400;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 .container {
     max-width: 1145px;
@@ -35,4 +36,16 @@ ol {
     border-radius: 10px;
     color: #ffffff;
     text-align: center;
+}
+.hide{
+    transform: translateY(-100%);
+}
+.show{
+    transform: translateY(0);
+}
+.questions__list-item.overflow{
+    overflow: visible;
+}
+.mt__li{
+    margin-top: 160px;
 }

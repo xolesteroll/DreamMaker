@@ -1,9 +1,10 @@
-$(function() {
-
+$(function () {
 });
 
 const provideItems = document.querySelectorAll('.provide__item'),
-    header = document.querySelector('header')
+    header = document.querySelector('header'),
+    questions = document.querySelectorAll('.questions__list-item'),
+    answers = document.querySelectorAll('.answer');
 
 provideItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -20,4 +21,27 @@ window.addEventListener('scroll', () => {
     } else {
         header.style.cssText = 'background-color: rgba(196,196,196,0.1);';
     }
+});
+
+function showDropdown(elem) {
+    elem.classList.remove('hide');
+    elem.classList.add('show');
+}
+
+
+questions.forEach(item => {
+    const child = item.lastElementChild;
+    const nextLi = item.nextElementSibling;
+    item.addEventListener('click', () => {
+        if (child.classList.contains('answer')) {
+            console.log(1);
+            child.classList.toggle('hide');
+            child.classList.toggle('show'); 
+            nextLi.classList.toggle('mt__li');
+            item.classList.toggle('overflow');
+        }
+    });
+
+
+
 });
