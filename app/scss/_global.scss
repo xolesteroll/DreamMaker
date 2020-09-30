@@ -1,0 +1,37 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+.body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 1145px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+ul, ol{
+    list-style: none;
+}
+.btn__global{
+    width: 234px;
+    background: #9B9BCA;
+    font-family: 'Poppins', sans-serif;
+    padding: 16px 5px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+}

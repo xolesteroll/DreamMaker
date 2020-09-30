@@ -1,4 +1,69 @@
 @import "vars";
 @import "libs";
 @import "fonts";
+@import "global";
+
+.header {
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    background: rgba(196, 196, 196, 0.1);
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 0;
+    }
+    &__nav-menu {
+        margin-left: auto;
+        li {
+            display: inline-block;
+            & + li{
+                margin-left: 58px;
+            }
+            a {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 27px;
+                font-family: 'Poppins', sans-serif;
+                color: #717784;
+            }
+        }
+    }
+    &__btn{
+        margin-left: 58px;
+    }
+}
+.main {
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    &__inner{
+        max-width: 750px;
+        color: #696A86;
+        position: absolute;
+        bottom: 150px;
+        left: 404px;
+    }
+    &__title{
+        font-size: 56px;
+        line-height: 100%;
+        font-weight: 700;
+        letter-spacing: -1px;
+        max-width: 548px;
+    }
+    &__text{
+        font-size: 18px;
+        line-height: 27px;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
 @import "media";
