@@ -9,10 +9,12 @@ const provideItems = document.querySelectorAll('.provide__item'),
 function showDropdown(elem) {
     elem.classList.remove('hide');
     elem.classList.add('show');
+    elem.parentElement.classList.add('active');
 }
 function hideDropdown(elem) {
     elem.classList.remove('show');
     elem.classList.add('hide');
+    elem.parentElement.classList.remove('active');
 }
 
 provideItems.forEach(item => {

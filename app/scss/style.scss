@@ -225,6 +225,11 @@
             cursor: pointer;
             overflow: hidden;
             transition: all 0.5s;
+            &.active{
+                &::after{
+                    transform: rotate(90deg);
+                }
+            }
             &::after {
                 content: "";
                 position: absolute;
@@ -235,6 +240,7 @@
                 width: 25px;
                 height: 25px;
                 right: 35px;
+                transition: all 0.5s;
             }
             span {
                 max-width: 380px;
