@@ -6,6 +6,15 @@ const provideItems = document.querySelectorAll('.provide__item'),
     questions = document.querySelectorAll('.questions__list-item'),
     answers = document.querySelectorAll('.answer');
 
+function showDropdown(elem) {
+    elem.classList.remove('hide');
+    elem.classList.add('show');
+}
+function hideDropdown(elem) {
+    elem.classList.remove('show');
+    elem.classList.add('hide');
+}
+
 provideItems.forEach(item => {
     item.addEventListener('click', () => {
         provideItems.forEach(item => {
@@ -23,25 +32,38 @@ window.addEventListener('scroll', () => {
     }
 });
 
-function showDropdown(elem) {
-    elem.classList.remove('hide');
-    elem.classList.add('show');
-}
 
+questions.forEach((item, n) => {
 
-questions.forEach(item => {
-    const child = item.lastElementChild;
-    const nextLi = item.nextElementSibling;
     item.addEventListener('click', () => {
-        if (child.classList.contains('answer')) {
-            console.log(1);
-            child.classList.toggle('hide');
-            child.classList.toggle('show'); 
-            nextLi.classList.toggle('mt__li');
-            item.classList.toggle('overflow');
+        console.log(questions[n + 1]);
+        if (answers[n].classList.contains('hide')) {
+            answers.forEach(ans => {
+                hideDropdown(ans);
+                questions.forEach(q => {
+                    q.classList.remove('mt__li');
+                    q.classList.remove('overflow');
+                });
+            });
+            showDropdown(answers[n]);
+            item.classList.add('overflow');
+            if (questions[n + 1]) {
+                questions[n + 1].classList.add('mt__li');
+            } else {
+                questions[n].style.marginBottom = '150px';
+            }
+            if (n === 6) {
+                questions[n + 1].classList.remove('mt__li');
+            }
+        } else {
+            hideDropdown(answers[n]);
+            item.classList.remove('overflow');
+            if(questions[n + 1]){
+                questions[n + 1].classList.remove('mt__li');
+            } else {
+                questions[n].style.marginBottom = '0';
+            }
+            
         }
     });
-
-
-
 });

@@ -28,6 +28,14 @@ ul,
 ol {
     list-style: none;
 }
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:focus{
+        outline: none;
+    }
+}
 .btn__global {
     width: 234px;
     background: #9b9bca;
@@ -37,15 +45,15 @@ ol {
     color: #ffffff;
     text-align: center;
 }
-.hide{
-    transform: translateY(-100%);
+.answer.hide{
+    height: 0;
 }
-.show{
-    transform: translateY(0);
+.answer.show{
+    height: 180px;
 }
 .questions__list-item.overflow{
     overflow: visible;
 }
 .mt__li{
-    margin-top: 160px;
+    margin-top: 230px;
 }
