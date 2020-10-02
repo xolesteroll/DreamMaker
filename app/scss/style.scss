@@ -230,6 +230,7 @@
                     transform: rotate(90deg);
                 }
             }
+
             &::after {
                 content: "";
                 position: absolute;
@@ -599,6 +600,10 @@
             background-position: center;
             background-size: auto;
             background-repeat: no-repeat;
+            transition: all 0.3s;
+            &:hover{
+                transform: scale(1.2);
+            }
             & + a {
                 margin-left: 30px;
             }
