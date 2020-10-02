@@ -21,6 +21,22 @@
         margin-left: auto;
         li {
             display: inline-block;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: #9b9bca;
+                width: 0;
+                height: 5px;
+                transition: all 0.5s;
+                bottom: -5px;
+                border-radius: 2px;
+            }
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
             & + li {
                 margin-left: 58px;
             }
@@ -577,7 +593,7 @@
             background-position: center;
             background-size: auto;
             background-repeat: no-repeat;
-            & + a{
+            & + a {
                 margin-left: 30px;
             }
         }

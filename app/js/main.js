@@ -41,7 +41,6 @@ window.addEventListener('scroll', () => {
 questions.forEach((item, n) => {
 
     item.addEventListener('click', () => {
-        console.log(questions[n + 1]);
         if (answers[n].classList.contains('hide')) {
             answers.forEach(ans => {
                 hideDropdown(ans);
