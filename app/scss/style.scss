@@ -193,6 +193,7 @@
     &__list {
         &:nth-child(2) {
             padding-top: 380px;
+            margin-left: 34px;
         }
         &-item {
             background: #ffffff;
@@ -255,7 +256,7 @@
     overflow: hidden;
 }
 .best {
-    padding-top: 50px;
+    padding: 50px 0 100px;
     text-align: center;
     position: relative;
     &::before {
@@ -330,6 +331,7 @@
             margin: 0 auto;
             &.best__button {
                 background-color: #9595c9;
+                z-index: 1;
             }
             &.best__link {
                 background-color: #f01f35;
@@ -338,6 +340,7 @@
     }
     &__feedback {
         padding: 100px 0;
+        min-height: 850px;
         &-bg {
             position: relative;
             > img {
@@ -396,10 +399,10 @@
     border-radius: 10px;
     position: absolute;
     right: 0;
-    &::after{
+    &::after {
         content: ">";
         position: absolute;
-        background-color: #EEEEEE;
+        background-color: #eeeeee;
         width: 56px;
         height: 56px;
         display: flex;
@@ -436,7 +439,7 @@
 .best__feedback-author__descr {
     font-weight: 400;
     font-size: 16px;
-    color: #9D9D9D;
+    color: #9d9d9d;
 }
 .best__feedback-author__star {
     width: 12px;
@@ -451,11 +454,136 @@
     align-items: top;
     span {
         font-weight: 400;
-        font-size: 12px;;
-        color: #9D9D9D;
+        font-size: 12px;
+        color: #9d9d9d;
         display: flex;
         align-items: center;
         padding-left: 5px;
+    }
+}
+.login {
+    margin-bottom: 100px;
+    &__title {
+        font-size: 48px;
+        line-height: 140%;
+        color: #402b2b;
+        max-width: 580px;
+        margin-bottom: 50px;
+    }
+    &__form {
+        background: #ffffff;
+        box-shadow: 0px 20px 40px rgba(149, 149, 201, 0.4);
+        border-radius: 10px;
+        padding: 105px 154px 60px;
+        max-width: 708px;
+        margin: 0 auto;
+        label {
+            display: block;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 40px;
+            color: $text;
+        }
+        input {
+            width: 100%;
+            padding: 11px 40px;
+            background: #ffffff;
+            border: 1px solid #9595c9;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 40px;
+            max-width: 400px;
+            height: 64px;
+            color: $text;
+            margin-bottom: 30px;
+            &:nth-child(2) {
+                margin-bottom: 40px;
+            }
+            &:focus {
+                outline: none;
+                border: 2px solid #9595c9;
+                box-shadow: 0px 20px 40px rgba(149, 149, 201, 0.2);
+            }
+            &::placeholder {
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 40px;
+                color: #9d9d9d;
+            }
+        }
+        button {
+            margin-bottom: 30px;
+        }
+    }
+    &__register {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 40px;
+        color: $text;
+        a {
+            color: #f01f35;
+        }
+    }
+}
+.footer {
+    padding-top: 177px;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 136px;
+        padding-left: 136px;
+        margin-bottom: 50px;
+    }
+    &__col {
+        &-title {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            color: #ffffff;
+        }
+        li {
+            a {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: #e6e6e6;
+            }
+        }
+    }
+    &__copy {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 0;
+    }
+    &__since {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 30px;
+        color: #ffffff;
+    }
+    &__social {
+        margin-left: auto;
+        &-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: #ffffff;
+            background-position: center;
+            background-size: auto;
+            background-repeat: no-repeat;
+            & + a{
+                margin-left: 30px;
+            }
+        }
+    }
+    &__logo {
+        margin-left: 123px;
     }
 }
 

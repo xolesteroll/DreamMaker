@@ -16,11 +16,16 @@ function hideDropdown(elem) {
 }
 
 provideItems.forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('mouseenter', () => {
         provideItems.forEach(item => {
             item.style.borderColor = 'transparent';
         });
         item.style.borderColor = '#9d9d9d';
+    });
+    item.addEventListener('mouseleave', () => {
+        provideItems.forEach(item => {
+            item.style.borderColor = 'transparent';
+        });
     });
 });
 
