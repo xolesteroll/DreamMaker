@@ -4,8 +4,10 @@ $(function () {
 const provideItems = document.querySelectorAll('.provide__item'),
     header = document.querySelector('header'),
     questions = document.querySelectorAll('.questions__list-item'),
-    answers = document.querySelectorAll('.answer');
+    answers = document.querySelectorAll('.answer'),
+    list = document.querySelector('.questions__list');
 
+    
 function showDropdown(elem) {
     elem.classList.remove('hide');
     elem.classList.add('show');
@@ -58,7 +60,7 @@ questions.forEach((item, n) => {
             } else {
                 questions[n].style.marginBottom = '150px';
             }
-            if (n === 6) {
+            if (item == item.parentElement.lastElementChild) {
                 questions[n + 1].classList.remove('mt__li');
             }
         } else {
