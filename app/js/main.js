@@ -5,9 +5,13 @@ const provideItems = document.querySelectorAll('.provide__item'),
     header = document.querySelector('header'),
     questions = document.querySelectorAll('.questions__list-item'),
     answers = document.querySelectorAll('.answer'),
-    list = document.querySelector('.questions__list');
+    list = document.querySelector('.questions__list'),
+    modal = document.querySelector('.modal'),
+    modalTrigger = document.querySelectorAll('[data-open]'),
+    modalCloseBtn = document.querySelector('[data-close]'),
+    modalInner = document.querySelector('.modal__inner');
 
-    
+
 function showDropdown(elem) {
     elem.classList.remove('hide');
     elem.classList.add('show');
@@ -18,6 +22,44 @@ function hideDropdown(elem) {
     elem.classList.add('hide');
     elem.parentElement.classList.remove('active');
 }
+function showModal(window) {
+    window.classList.remove('none');
+    window.classList.add('block');
+}
+function closeMOdal(window) {
+    window.classList.remove('block');
+    window.classList.add('none');
+}
+
+function ModalCloseOpen(){
+    modalTrigger.forEach(btn => {
+        btn.addEventListener('click', () => {
+            showModal(modal);
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    modal.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target == modalCloseBtn || target == modal || target.code == 'Escape') {
+            closeMOdal(modal);
+            document.body.style.overflow = '';
+        }
+    });
+    
+    document.addEventListener('keyup', (e) => {
+        if (e.code === 'Escape' && modal.classList.contains('block')) {
+            closeMOdal(modal);
+            document.body.style.overflow = '';
+        }
+    });
+    
+    
+}
+
+ModalCloseOpen();
+
+
 
 provideItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
@@ -66,12 +108,12 @@ questions.forEach((item, n) => {
         } else {
             hideDropdown(answers[n]);
             item.classList.remove('overflow');
-            if(questions[n + 1]){
+            if (questions[n + 1]) {
                 questions[n + 1].classList.remove('mt__li');
             } else {
                 questions[n].style.marginBottom = '0';
             }
-            
+
         }
     });
 });

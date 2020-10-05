@@ -28,12 +28,29 @@
                         <li><a href="#">Setting</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="header__btn btn__global">
+                <a href="#" class="header__btn btn__global" data-open>
                     Contact Us
                 </a>
             </div>
         </div>
     </header>
+
+    <div class="modal none">
+        <div class="modal__inner">
+            <form class="modal__form">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" placeholder="Name">
+                <label for="surname">Your Surname</label>
+                <input type="text" name="surname" placeholder="Surname">
+                <label for="mail">Your Email</label>
+                <input type="text" name="mail" placeholder="Email">
+                <label for="words">Tell Us About You</label>
+                <textarea name="words" placeholder="Few words"></textarea>
+                <button class="btn__global" type="submit">Send</button>
+            </form>
+            <a href="#" data-close>×</a>
+        </div>
+    </div>
 
     <section class="main" style="background-image: url(images/mainbg.png);">
         <div class="main__inner">
@@ -175,13 +192,8 @@
                             Traffic permits are a requirement for conducting professional traffic.
                         </div>
                     </li>
-                    <li class="questions__list-item"><span>Are there professional traffic permit training courses at a
-                            distance?</span>
-                        <div class="answer hide">
-                            Traffic permits are a requirement for conducting professional traffic.
-                        </div>
-                    </li>
-                    
+
+
                 </ul>
                 <ul class="questions__list">
                     <li class="questions__list-item"><span>When is a professional traffic permit needed?</span>
@@ -201,7 +213,13 @@
                             Traffic permits are a requirement for conducting professional traffic.
                         </div>
                     </li>
-                   
+                    <li class="questions__list-item"><span>Are there professional traffic permit training courses at a
+                            distance?</span>
+                        <div class="answer hide">
+                            Traffic permits are a requirement for conducting professional traffic.
+                        </div>
+                    </li>
+
                 </ul>
             </div>
             <button class="btn__global questions__btn">
@@ -386,9 +404,11 @@
                     Copyright @ 2019
                 </div>
                 <div class="footer__social">
-                    <a href="#" class="footer__social-link"style="background-image: url(images/icons/facebook.svg)"></a>
-                    <a href="#" class="footer__social-link"style="background-image: url(images/icons/twitter.svg)"></a>
-                    <a href="#" class="footer__social-link"style="background-image: url(images/icons/instagram.svg)"></a>
+                    <a href="#" class="footer__social-link"
+                        style="background-image: url(images/icons/facebook.svg)"></a>
+                    <a href="#" class="footer__social-link" style="background-image: url(images/icons/twitter.svg)"></a>
+                    <a href="#" class="footer__social-link"
+                        style="background-image: url(images/icons/instagram.svg)"></a>
                 </div>
                 <div class="footer__logo">
                     <a href="#"><img src="images/footer-logo.png" alt="footer-logo"></a>
