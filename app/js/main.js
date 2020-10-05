@@ -5,11 +5,9 @@ const provideItems = document.querySelectorAll('.provide__item'),
     header = document.querySelector('header'),
     questions = document.querySelectorAll('.questions__list-item'),
     answers = document.querySelectorAll('.answer'),
-    list = document.querySelector('.questions__list'),
     modal = document.querySelector('.modal'),
     modalTrigger = document.querySelectorAll('[data-open]'),
-    modalCloseBtn = document.querySelector('[data-close]'),
-    modalInner = document.querySelector('.modal__inner');
+    modalCloseBtn = document.querySelector('[data-close]');
 
 
 function showDropdown(elem) {
@@ -54,7 +52,7 @@ function ModalCloseOpen(){
         }
     });
     
-    
+
 }
 
 ModalCloseOpen();
