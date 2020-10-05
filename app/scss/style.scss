@@ -108,7 +108,7 @@
         resize: none;
         width: 100%;
         min-height: 100px;
-        padding: 35px;
+        padding: 0 35px;
         padding-top: 15px;
         margin-bottom: 25px;
         border: 1px solid #9595c9;
@@ -120,7 +120,6 @@
         &::placeholder {
             font-weight: 300;
             font-size: 18px;
-            line-height: 40px;
             color: #9d9d9d;
         }
     }

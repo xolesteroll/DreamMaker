@@ -23,32 +23,35 @@ function hideDropdown(elem) {
 function showModal(window) {
     window.classList.remove('none');
     window.classList.add('block');
+    document.body.style.overflow = 'hidden';
 }
 function closeMOdal(window) {
     window.classList.remove('block');
     window.classList.add('none');
+    document.body.style.overflow = '';
 }
 
 function ModalCloseOpen(){
     modalTrigger.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             showModal(modal);
-            document.body.style.overflow = 'hidden';
+            
         });
     });
     
     modal.addEventListener('click', (e) => {
+        e.preventDefault();
         const target = e.target;
-        if (target == modalCloseBtn || target == modal || target.code == 'Escape') {
+        if (target == modalCloseBtn || target == modal) {
             closeMOdal(modal);
-            document.body.style.overflow = '';
+            
         }
     });
     
     document.addEventListener('keyup', (e) => {
         if (e.code === 'Escape' && modal.classList.contains('block')) {
             closeMOdal(modal);
-            document.body.style.overflow = '';
         }
     });
     
@@ -100,7 +103,7 @@ questions.forEach((item, n) => {
             } else {
                 questions[n].style.marginBottom = '150px';
             }
-            if (item == item.parentElement.lastElementChild) {
+            if (item == item.parentElement.lastElementChild && questions[n + 1]) {
                 questions[n + 1].classList.remove('mt__li');
             }
         } else {
