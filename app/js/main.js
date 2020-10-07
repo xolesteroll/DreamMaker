@@ -7,7 +7,40 @@ const provideItems = document.querySelectorAll('.provide__item'),
     answers = document.querySelectorAll('.answer'),
     modal = document.querySelector('.modal'),
     modalTrigger = document.querySelectorAll('[data-open]'),
-    modalCloseBtn = document.querySelector('[data-close]');
+    modalCloseBtn = document.querySelector('[data-close]'),
+    girlImg = document.querySelector('.best__girl-img'),
+    peopleImg = document.querySelector('.people__img'),
+    manImg = document.querySelector('.questions__man-img'),
+    loginForm = document.querySelector('.login__form');
+
+function fadeImg(img) {
+    img.classList.remove('fadeOut');
+    img.classList.add('fadeIn');
+}
+function fadeOutElem(elem) {
+    elem.style.cssText = "transition: all 1.5s";
+    elem.classList.add('fadeOut');
+} 
+
+fadeOutElem(girlImg);
+fadeOutElem(peopleImg);
+fadeOutElem(manImg);
+fadeOutElem(loginForm);
+
+window.addEventListener('scroll', () => {
+    if (girlImg.getBoundingClientRect().top <= 250 && girlImg.getBoundingClientRect().top >= -250) {
+        fadeImg(girlImg);
+    }
+    if (peopleImg.getBoundingClientRect().top <= 400 && peopleImg.getBoundingClientRect().top >= -400) {
+        fadeImg(peopleImg);
+    }
+    if (manImg.getBoundingClientRect().top <= 300 && manImg.getBoundingClientRect().top >= -300) {
+        fadeImg(manImg);
+    }
+    if (loginForm.getBoundingClientRect().top <= 500 && loginForm.getBoundingClientRect().top >= -400) {
+        fadeImg(loginForm);
+    }
+});
 
 
 function showDropdown(elem) {
@@ -31,30 +64,30 @@ function closeMOdal(window) {
     document.body.style.overflow = '';
 }
 
-function ModalCloseOpen(){
+function ModalCloseOpen() {
     modalTrigger.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             showModal(modal);
-            
+
         });
     });
-    
+
     modal.addEventListener('click', (e) => {
         e.preventDefault();
         const target = e.target;
         if (target == modalCloseBtn || target == modal) {
             closeMOdal(modal);
-            
+
         }
     });
-    
+
     document.addEventListener('keyup', (e) => {
         if (e.code === 'Escape' && modal.classList.contains('block')) {
             closeMOdal(modal);
         }
     });
-    
+
 
 }
 
@@ -118,3 +151,4 @@ questions.forEach((item, n) => {
         }
     });
 });
+
