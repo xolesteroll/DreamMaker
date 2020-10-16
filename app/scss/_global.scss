@@ -70,3 +70,12 @@ button{
 .fadeIn{
     opacity: 1;
 }
+.slideout__right {
+    transform: translateX(500%);
+}
+.slideout__left {
+    transform: translateX(-500%);
+}
+.slideIn{
+    transform: translateX(0);
+}

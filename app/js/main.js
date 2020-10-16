@@ -1,5 +1,4 @@
-$(function () {
-});
+
 
 const provideItems = document.querySelectorAll('.provide__item'),
     header = document.querySelector('header'),
@@ -21,21 +20,29 @@ function fadeOutElem(elem) {
     elem.style.cssText = "transition: all 1.5s";
     elem.classList.add('fadeOut');
 } 
+function slideOutElem(elem, side) {
+    elem.style.cssText = "transition: all 1s";
+    elem.classList.add(side);
+}
+function slideInElem(elem, side) {
+    elem.classList.remove(side);
+    elem.classList.add("slideIn");
+}
 
-fadeOutElem(girlImg);
-fadeOutElem(peopleImg);
-fadeOutElem(manImg);
+slideOutElem(girlImg, "slideout__left");
+slideOutElem(peopleImg, "slideout__right");
+slideOutElem(manImg, "slideout__right");
 fadeOutElem(loginForm);
 
 window.addEventListener('scroll', () => {
     if (girlImg.getBoundingClientRect().top <= 250 && girlImg.getBoundingClientRect().top >= -250) {
-        fadeImg(girlImg);
+        slideInElem(girlImg, "slideout__left");
     }
     if (peopleImg.getBoundingClientRect().top <= 400 && peopleImg.getBoundingClientRect().top >= -400) {
-        fadeImg(peopleImg);
+        slideInElem(peopleImg, "slideout__right");
     }
     if (manImg.getBoundingClientRect().top <= 300 && manImg.getBoundingClientRect().top >= -300) {
-        fadeImg(manImg);
+        slideInElem(manImg, "slideout__right");
     }
     if (loginForm.getBoundingClientRect().top <= 500 && loginForm.getBoundingClientRect().top >= -400) {
         fadeImg(loginForm);
